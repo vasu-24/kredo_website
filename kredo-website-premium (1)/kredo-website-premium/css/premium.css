@@ -1,0 +1,212 @@
+/* ═══════════════════════════════════════════════════
+   KREDO ANALYTICS — Premium Layer
+   Calm. Confident. Corporate.
+   Competition-grade enhancements
+   ═══════════════════════════════════════════════════ */
+
+/* Page entrance — gentle fade in */
+body {
+  animation: pageEnter 0.4s ease forwards;
+}
+@keyframes pageEnter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ─── REVEAL CLASS (used by inner pages) ─── */
+.reveal, .rv {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.v, .rv.v {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── SCROLL PROGRESS BAR ─── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--blue, #3B82F6);
+  z-index: 10001;
+  width: 0;
+  transform-origin: left;
+  will-change: width;
+}
+
+/* ─── ENHANCED REVEAL ANIMATIONS ─── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.reveal-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0s; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.08s; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.16s; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.24s; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.32s; }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.4s; }
+.stagger-children.visible > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── SPLIT TEXT WORDS ─── */
+.word-reveal .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 4px;
+}
+.word-reveal .word-inner {
+  display: inline-block;
+  transform: translateY(105%);
+  transition: transform 0.6s cubic-bezier(0.25, 0, 0.3, 1);
+}
+.word-reveal.visible .word-inner {
+  transform: none;
+}
+/* Stagger the word reveals */
+.word-reveal.visible .word:nth-child(1) .word-inner { transition-delay: 0s; }
+.word-reveal.visible .word:nth-child(2) .word-inner { transition-delay: 0.04s; }
+.word-reveal.visible .word:nth-child(3) .word-inner { transition-delay: 0.08s; }
+.word-reveal.visible .word:nth-child(4) .word-inner { transition-delay: 0.12s; }
+.word-reveal.visible .word:nth-child(5) .word-inner { transition-delay: 0.16s; }
+.word-reveal.visible .word:nth-child(6) .word-inner { transition-delay: 0.2s; }
+.word-reveal.visible .word:nth-child(7) .word-inner { transition-delay: 0.24s; }
+.word-reveal.visible .word:nth-child(8) .word-inner { transition-delay: 0.28s; }
+.word-reveal.visible .word:nth-child(9) .word-inner { transition-delay: 0.32s; }
+.word-reveal.visible .word:nth-child(10) .word-inner { transition-delay: 0.36s; }
+
+/* ─── LINE REVEAL (for subtitle text) ─── */
+.line-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s,
+              transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s;
+}
+.line-reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── ENHANCED CARD HOVERS ─── */
+.card, .wwd-card, .cl-b {
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+/* Subtle glow on card hover */
+.wwd-card:hover {
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1),
+              0 0 0 1px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* ─── SMOOTH GRADIENT LINE ON SECTIONS ─── */
+.sec-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border, #D8DEE9), transparent);
+}
+
+/* ─── NAV ENHANCEMENTS ─── */
+.nav {
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+/* ─── HERO TEXT POLISH ─── */
+.hero h1 {
+  text-shadow: 0 2px 40px rgba(0,0,0,0.15);
+}
+.hero-sub {
+  text-shadow: 0 1px 20px rgba(0,0,0,0.1);
+}
+
+/* ─── BUTTON POLISH ─── */
+.btn {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+
+/* ─── FOOTER SUBTLE GRADIENT ─── */
+/* footer gradient removed - using light bg instead */
+
+/* ─── STATS NUMBER GLOW ─── */
+.nums-i strong {
+  transition: text-shadow 0.3s ease;
+}
+.nums-i:hover strong {
+  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* ─── SMOOTH IMAGE LOADING ─── */
+img {
+  transition: opacity 0.4s ease;
+}
+
+/* ─── TRUST BAR POLISH ─── */
+.trust {
+  transition: all 0.3s ease;
+}
+
+/* ─── FOCUS ACCESSIBILITY ─── */
+:focus-visible {
+  outline: 2px solid var(--blue, #3B82F6);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── SELECTION COLOR ─── */
+::selection {
+  background: rgba(37, 99, 235, 0.15);
+  color: inherit;
+}
+
+/* ─── STORY CARD POLISH ─── */
+.story-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+.story-card:hover {
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.08) !important;
+  transform: translateY(-2px);
+}
+
+/* ─── REDUCED MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .preloader { display: none !important; }
+  .cursor-dot, .cursor-ring { display: none !important; }
+  .word-reveal .word-inner { transform: none !important; }
+  .reveal-up { opacity: 1 !important; transform: none !important; }
+}
